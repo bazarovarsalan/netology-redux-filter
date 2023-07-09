@@ -1,0 +1,92 @@
+
+
+
+
+body {
+  font-family: 'Mina', sans-serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.App {
+  position: inherit;
+  background-color: white;
+  width:100vw;
+  height: 100vh;
+  margin: 0;
+
+}
+
+.form {
+  margin-top: 30px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.typeService-input {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width: 700px;
+  margin-bottom: 30px;
+}
+
+
+.typeService-form__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+
+.typeService-form__input {
+  width: 250px;
+  height: 30px;
+  border-radius: 0px;
+  font-size: 18px;
+  padding: 0 10px;
+  outline: none;
+}
+
+.filter__input {
+  width: 250px;
+  height: 30px;
+  border-radius: 0px;
+  font-size: 18px;
+  padding: 0 10px;
+  outline: none;
+}
+
+.typeService-form__button {
+  align-self: center;
+  width: 100px;
+  height: 30px;
+  border-radius: 0px;
+  background-color: silver;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.item {
+  color: black;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+
+  
+}
+
+.filterHeader {
+  font-size: 18px;
+  color: black;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
