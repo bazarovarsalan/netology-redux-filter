@@ -3,7 +3,7 @@ import './App.css'
 import EditIcon from '@mui/icons-material/Edit'
 import CloseIcon from '@mui/icons-material/Close'
 import { useDispatch, useSelector } from 'react-redux'
-import {IState, TRepairList} from './types/types'
+import {IState, TRepairList, IFilter} from './types/types'
 
 
 
@@ -13,10 +13,7 @@ function App() {
   const {typeService, price, id} = useSelector((state:IState) => state.repairForm);
   const list = useSelector((state:IState) => state.repairList);
   const checkEdit = useSelector((state:IState) => state.checkEdit)
-  const filterValue = useSelector((state) => state.filterValue)
-  
-  
-
+  const filterValue = useSelector((state:IFilter) => state.filterValue)
 
   const handleChange = (event:React.ChangeEvent<HTMLInputElement>) => {
       const {name, value} = event.target;
@@ -71,7 +68,7 @@ function App() {
       if (!checkEdit) {
           dispatch({
             type:'REMOVE_REPAIR',
-            payload: {id: id}
+            payload: {repairItem : {id: id}}
             
           })
       } else {
@@ -126,12 +123,12 @@ const handleChangeFilter = (event:React.ChangeEvent<HTMLInputElement>) => {
   event.preventDefault();
   const {value} = event.target;
         dispatch({
-          type: 'CHANCGE_FILTER_VALUE',
+          type: 'CHANGE_FILTER_VALUE',
           payload: value
         })
         dispatch({
             type:'FILTER',
-            payload: {filterVal:filterValue}
+            payload: {filterVal:value}
           })
 
 }

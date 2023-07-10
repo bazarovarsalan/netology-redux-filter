@@ -13,8 +13,8 @@ export const repairListReducer = (state:TRepairList[] | [] = [], action: IAction
             return state.map(item => item.id === action.payload.repairItem.id ? item = action.payload.repairItem : item)
 
         case 'FILTER':
-            const re = new RegExp(action.payload.filterVal, 'gi')
-            return state.map(item => item.match(re))
+            const regExp = new RegExp(action.payload.filterVal, 'gi')
+            return state ? state.filter((item) => item.typeService?.match(regExp)) : state 
 
         default:
              return state;

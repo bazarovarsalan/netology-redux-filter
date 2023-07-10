@@ -37,3 +37,7 @@ export type TRepairPhone = {
     type: string,
     payload: String
   }
+
+  export interface IFilter {
+    filterValue: {value:string}
+  }
