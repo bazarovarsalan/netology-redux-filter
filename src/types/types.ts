@@ -41,3 +41,12 @@ export type TRepairPhone = {
   export interface IFilter {
     filterValue: {value:string}
   }
+
+  export interface IStateList {
+    list: TRepairList[],
+    filterState: TRepairList[]
+  }
+
+  export interface IStateListUse {
+    repairList: IStateList
+  }

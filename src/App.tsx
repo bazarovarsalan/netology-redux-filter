@@ -3,7 +3,7 @@ import './App.css'
 import EditIcon from '@mui/icons-material/Edit'
 import CloseIcon from '@mui/icons-material/Close'
 import { useDispatch, useSelector } from 'react-redux'
-import {IState, TRepairList, IFilter} from './types/types'
+import {IState, TRepairList, IFilter, IStateListUse} from './types/types'
 
 
 
@@ -11,7 +11,7 @@ function App() {
 
   const dispatch = useDispatch();
   const {typeService, price, id} = useSelector((state:IState) => state.repairForm);
-  const list = useSelector((state:IState) => state.repairList);
+  const list = useSelector((state:IStateListUse) => state.repairList.filterState);
   const checkEdit = useSelector((state:IState) => state.checkEdit)
   const filterValue = useSelector((state:IFilter) => state.filterValue)
 
